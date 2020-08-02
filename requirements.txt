@@ -1,0 +1,5 @@
+django
+djangorestframework
+djangorestframework-jwt
+pysqlite3
+db-sqlite3
