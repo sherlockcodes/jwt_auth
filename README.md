@@ -2,6 +2,9 @@
 
 Django Rest API with JSON web token(JWT) authentication.
 
+## Note
+Since JWT authentication is stateless, I added another field in user model called jwt_secret to change JWT token while logout.
+When user logs out, a new jwt_secret value will be generated for a user and old JWT token will be invalidated. 
 
 ## Usage
 
@@ -38,4 +41,8 @@ Start the app
 python3 manage.py runserver
 ```
 
+Please refer jwt.postman_collection.json to play with API's.
 
+ 
+## TODO's
+need to host this solution. will do if required.

@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "b69570e6-dbdc-4fd8-a83a-226359cf9027",
+		"name": "jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"email\":\"hari@gmail.com\",\n \"password\":\"1234567\",\n \"profile\": {\n        \"first_name\": \"hari\",\n        \"last_name\": \"krishnan\",\n        \"phone_number\": \"1234567892\",\n        \"age\": 29,\n        \"gender\": \"M\"\n }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNTU2NjJkYWEtYzY1Yi00ZGViLWJlOGYtODQ5YWE1ZTlmMjQzIiwidXNlcm5hbWUiOiJoYXJpQGdtYWlsLmNvbSIsImV4cCI6MTU5Njk4MjU2MywiZW1haWwiOiJoYXJpQGdtYWlsLmNvbSJ9.WqDyxcyag16G_9StZZbiHhNONSjzniu_hCSM7QNE5Vc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign out",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNTU2NjJkYWEtYzY1Yi00ZGViLWJlOGYtODQ5YWE1ZTlmMjQzIiwidXNlcm5hbWUiOiJoYXJpQGdtYWlsLmNvbSIsImV4cCI6MTU5Njk4MjY4MywiZW1haWwiOiJoYXJpQGdtYWlsLmNvbSJ9.nJv3SfVMw_Pen4Y3njQwOX_k_hi1VohWvKetub_zcbI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/signout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
