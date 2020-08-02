@@ -160,7 +160,7 @@ JWT_AUTH = {
     'rest_framework_jwt.utils.jwt_response_payload_handler',
 
     'JWT_SECRET_KEY': 'SECRET_KEY',
-    'JWT_GET_USER_SECRET_KEY': None,
+    'JWT_GET_USER_SECRET_KEY': 'rest.app.user.models.jwt_get_secret_key',
     'JWT_PUBLIC_KEY': None,
     'JWT_PRIVATE_KEY': None,
     'JWT_ALGORITHM': 'HS256',

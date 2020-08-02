@@ -1,4 +1,4 @@
-# django-rest-app
+# JWT auth using Django
 
 Django Rest API with JSON web token(JWT) authentication.
 
@@ -8,6 +8,7 @@ Django Rest API with JSON web token(JWT) authentication.
 ```bash
 cd jwt_auth
 ```
+
 
 Create a virtual environment
 

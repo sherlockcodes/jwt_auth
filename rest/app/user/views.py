@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from rest_framework import status
-from rest_framework.generics import CreateAPIView, RetrieveAPIView
+from rest_framework import status, permissions, views
+from rest_framework.generics import CreateAPIView, RetrieveAPIView, UpdateAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
-from rest.app.user.serializers import UserRegistrationSerializer
+from rest.app.user.serializers import UserRegistrationSerializer, UserLogoutSerializer
 from rest.app.user.serializers import UserLoginSerializer
+import uuid
 
 
 class UserRegistrationView(CreateAPIView):
@@ -44,4 +45,11 @@ class UserLoginView(RetrieveAPIView):
         return Response(response, status=status_code)
 
 
+class UserLogoutView(views.APIView):
+    permission_classes = [permissions.IsAuthenticated]
 
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        user.jwt_secret = uuid.uuid4()
+        user.save()
+        return Response(status=status.HTTP_204_NO_CONTENT)
